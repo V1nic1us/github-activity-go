@@ -1,4 +1,4 @@
-changelog:
+- changelog:
   - version: 1.0.1
     changes:
       - Added postinstall and postremove scripts
