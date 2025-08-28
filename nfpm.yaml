@@ -1,0 +1,36 @@
+# This is an example nfpm configuration file.
+# Make sure to check the documentation at https://nfpm.goreleaser.com
+#
+# The lines below are called `modelines`. See `:help modeline`
+# Feel free to remove those if you don't want/need to use them.
+# yaml-language-server: $schema=https://nfpm.goreleaser.com/static/schema.json
+# vim: set ts=2 sw=2 tw=0 fo=cnqoj
+
+name: "github-activity"
+arch: "amd64"
+platform: "linux"
+version: "1.0.0"
+section: "utils"
+priority: "optional"
+maintainer: "Marcus Marques <marcusvinicius.mds16@gmail.com>"
+description: "CLI tool to view user activity on GitHub"
+vendor: "Marcus Marques"
+homepage: "https://github.com/V1nic1us/github-activity-go"
+license: "MIT"
+# Dependências básicas para rodar
+depends:
+  - bash
+  - curl
+
+# Arquivos do pacote
+contents:
+  # binário principal
+  - src: ./github-activity
+    dst: /usr/bin/github-activity
+
+# Scripts executados durante instalação/remoção
+scripts:
+  postinstall: ./scripts/postinstall.sh
+  postremove: ./scripts/postremove.sh
+
+changelog: "changelog.yml"
