@@ -25,7 +25,7 @@ depends:
 # Arquivos do pacote
 contents:
   # binário principal
-  - src: ./github-activity
+  - src: ./bin/github-activity
     dst: /usr/bin/github-activity
 
 # Scripts executados durante instalação/remoção
